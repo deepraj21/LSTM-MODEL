@@ -74,7 +74,7 @@ def LSTM(df):
     x_train, y_train = np.array(x_train), np.array(y_train)
 
     # Load pre-trained model
-    model = load_model('./LSTM-DL-MODEL/stock_price_prediction_model.h5')
+    model = load_model('stock_price_prediction_model.h5')
 
     past_100_days = data_training.tail(100)
     final_df = pd.concat([past_100_days, data_testing], ignore_index=True)
@@ -136,5 +136,5 @@ def predict_stock(ticker):
             "error": str(e)
         }), 500
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=True)
